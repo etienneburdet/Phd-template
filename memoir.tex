@@ -2,6 +2,8 @@
 
 % *** Load packages ***
 
+\usepackage{blindtext} % For the purpose  of the template. Erase this  in your doc.
+
 % --- Font & Enconding options ---
 \usepackage[utf8]{luainputenc}
 \usepackage{lmodern}
@@ -50,7 +52,7 @@
 \usepackage{subcaption}
 \usepackage[nomain,acronym,toc,xindy={codepage=utf8}]{glossaries}
 
-% *** New Commands ***
+% *********** New Commands ***************
 
 %Note : sketchy as of now, feel free to submit something cleaner !
 
@@ -108,18 +110,17 @@
 \chapterstyle{veelo}
 \pagestyle{companion}
 
-\include{ack/ack.tex}
-
 \epipart{A part with an epigraph}{"A fancy quote"}{Some pretentious author}
-\include{chapter-xx/chapter-xx}
+\include{chapter-a/chapter-a} % You may include multiple files per chapter.
 
-\part*{A regular part (unnumbered)} 
+\part*{A regular part without epigraph(unnumbered)}
+\include{chapter-b/chapter-b} 
 
 %% *************** Bibliography ***************
 \bibliographystyle{chicagoa}
 {\small\bibliography{mybibliography}}
 
-% *** Appendixes ***
+% **************** Appendixes *************
 \appendix
 \appendixpage*
 \include{app1/app1.tex}

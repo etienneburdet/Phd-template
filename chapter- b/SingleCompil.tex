@@ -1,0 +1,64 @@
+%%%%%%%%%%% Base Article ou Rapport simple %%%%%%%%
+%%%%%%%%%%% Article non ELS uniquement %%%%%%%%%%
+
+% *************** Classe de Document ***************
+\documentclass[a4paper,10pt]{article}
+
+% *************** Packages & Style ***************
+\usepackage[utf8x]{luainputenc}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[round,authoryear]{natbib}
+\usepackage[
+		plainpages=false,
+		pdfpagelabels,
+		bookmarksnumbered,%
+		bookmarksopen,
+        colorlinks=true,%
+        linkcolor=blue,%
+        citecolor=blue,%
+        filecolor=blue,%
+        urlcolor=blue,%
+        pdftex,%
+        unicode,
+        bookmarksopen
+        ]{hyperref}
+        
+\usepackage{color}
+\definecolor{blue}          {cmyk}{1   , 1   , 0   , 0   }
+\usepackage{authblk}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{flafter}
+\usepackage{setspace}
+\usepackage[mathlines]{lineno}
+\usepackage{subcaption}
+
+\newcommand{\gls}{\emph}
+\newcommand{\newacronym}[3]{\textcolor{red}{#1,#2} \\}
+\newcommand{\newglossaryentry}[3]{\textcolor{red}{#1,#2,#3} \\}
+\newcommand{\chapter}[1]{\section*{#1}}
+
+% *************** Figures Path ***************
+\graphicspath{{./img/}}
+
+% **************** Draft options *********
+\doublespacing
+\linenumbers
+% *************** Infos ***************
+\begin{document}
+%--------------------------------------------------------------
+\include{chapter-b}
+%--------------------------------------------------------------
+
+% *************** Biblio ***************
+\bibliographystyle{chicagoa}
+{\small\bibliography{chap-b}
+
+%
+\end{document}
