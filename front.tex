@@ -1,0 +1,71 @@
+% *************** Front matter ***************
+
+% ***************************************************
+% You should specify the contents of title page here
+% Then you can specify dedication page or disable it
+% ***************************************************
+
+% *************** Title page ***************
+\pagestyle{empty}
+\sffamily
+
+\noindent
+\begin{center}
+    \Large\bfseries
+This is my thesis  
+\end{center}
+
+\vfill\vfill
+\begin{center}
+    \Large\bfseries
+    
+\end{center}
+
+\vfill
+\begin{center}
+    \huge
+    \textsc{By Me}
+\end{center}
+
+\vfill
+\begin{center}
+    \Huge\bfseries
+\end{center}
+
+\vfill\vfill\vfill
+\begin{center}
+    \Large
+
+\end{center}
+
+\vfill
+\begin{center}
+\large
+
+\end{center}
+
+\cleardoublepage
+
+% *************** Dedication ***************
+\vspace*{\fill}
+{\hfill\sffamily\itshape To ...}
+\cleardoublepage
+
+%\rmfamily
+\normalfont
+% *************** Abstract **********
+\begin{abstract}
+Make it  short, make it clear.
+\end{abstract}
+
+% *************** Table of contents ***************
+\pagenumbering{roman}
+\pagestyle{headings}
+\setsecnumdepth{section}
+\maxtocdepth{subsection}
+\cftsetindents{subsection}{4.5em}{3.9em}
+\cftnodots
+\renewcommand{\cftsubsectionfont}{\small}
+\tableofcontents
+
+% *************** End of front matter ***************
