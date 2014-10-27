@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+%  Packages 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{blindtext} % For the purpose  of the template. Erase this  in your doc.
+
+% --- Font & Enconding options ---
+%\usepackage[utf8]{luainputenc} % for lualatex. XeteX is usually faster.
+%\usepackage{xetex-inputenc}
+\usepackage{lmodern}
+\usepackage{fontspec}
+
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{microtype} %Recommended to activate only for final document
+
+% --- Language options ---
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+
+% --- Graphics and symbols ---
+\usepackage{color}
+\definecolor{blue}          {cmyk}{1   , 1   , 0   , 0   }
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+\usepackage[
+		plainpages=false,
+		pdfpagelabels,
+		bookmarksnumbered,%
+		bookmarksopen,
+        colorlinks=true,%
+        linkcolor=blue,%
+        citecolor=blue,%
+        filecolor=blue,%
+        urlcolor=blue,%
+        ]{hyperref}  
+        
+% --- Environments & Commands ---
+\usepackage{booktabs}
+\usepackage[round,authoryear]{natbib}
+\usepackage{epigraph}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{flafter}
+\usepackage{subcaption}
+\usepackage[nomain,acronym,toc,xindy={codepage=utf8}]{glossaries}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  New Commands 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Note : The part style is really sketchy as of now, feel free to submit something cleaner ! (perfectly functional though)
+
+\setlength\epigraphwidth{0.3\paperwidth}
+\epigraphfontsize{\normalsize}
+\renewcommand{\textflush}{flushleftright}
+
+\newlength{\partboxlength}
+\setlength{\partboxlength}{\paperwidth}
+\addtolength{\partboxlength}{-\linewidth}
+\renewcommand*{\thepart}{\arabic{part}}
+\renewcommand*{\parttitlefont}{\raggedleft\normalfont\Huge\MakeUppercase}
+\renewcommand*{\beforepartskip}{\null\vskip 0pt plus 0.4fil}
+\renewcommand*{\printparttitle}[1]{%
+\begin{tabular}{b{\linewidth}b{\partboxlength}}
+\parttitlefont{#1} & \hspace{1em} \rule{0.5em}{8em} \hspace{0.5em} \rule{8em}{8em}
+\end{tabular}
+}
+
+
+\newcommand{\epipart}[3]{
+\let\oldafterpartskip\afterpartskip
+\renewcommand{\afterpartskip}{%
+\vspace{1em}
+\epigraph{#2}{#3}
+\vfill
+}
+\part*{#1}
+\let\afterpartskip\oldafterpartskip
+}
+
+
+
+% *************** Graphic Files ***************
+\graphicspath{
+{./img/},
+}
+
+%*************** Glossaries ***************
+\newglossary{symbols}{sym}{sbl}{List of Symbols}
+\makeglossaries
