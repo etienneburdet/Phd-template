@@ -1,66 +1,88 @@
 % *************** Front matter ***************
 
 % ***************************************************
-% You should specify the contents of title page here
-% Then you can specify dedication page or disable it
+% Title page
+% Optional dedication page
+% Abstract page
+% Tables of content
 % ***************************************************
 
 % *************** Title page ***************
 \pagestyle{empty}
-\sffamily
+%\sffamily
 
+%--- Institution logo if needed -----
+%\begin{center}
+%\includegraphics[scale = ]{}
+%\end{center}
+
+
+\vfill
 \noindent
 \begin{center}
-    \Large\bfseries
-This is my thesis  
-\end{center}
-
-\vfill\vfill
-\begin{center}
-    \Large\bfseries
-    
+    \Large
+Phd. Dissertation,  The University of Awesomeness \\
+Life Would Be too Simple with only One Institution \\
+Discipline : \LaTeX\ writer \\
 \end{center}
 
 \vfill
-\begin{center}
-    \huge
-    \textsc{By Me}
-\end{center}
 
-\vfill
+\noindent\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+\rule{\textwidth}{0.4pt} % Thin horizontal line
+
 \begin{center}
     \Huge\bfseries
+    My Phd. \\ You Should Read It
 \end{center}
 
-\vfill\vfill\vfill
-\begin{center}
-    \Large
+\noindent\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+\rule{\textwidth}{1.6pt}\\[\baselineskip] % Thick horizontal line
 
+\begin{center}
+\Large
+Defended in public by \\
+\huge
+\textsc{Me Myself}
+\end{center}
+\vfill
+\begin{center}
+	\Large\noindent 
+    In latexland, with the jury members:\\
+    \vfill
+    \begin{tabular}{lcr}
+    \textsc{The Bigprof} & Grade/Institution & President \\
+    \textsc{Important Scholar} & Grade/Institution & Examinator \\
+    \end{tabular}       
 \end{center}
 
 \vfill
-\begin{center}
-\large
-
-\end{center}
 
 \cleardoublepage
-
-% *************** Dedication ***************
-\vspace*{\fill}
-{\hfill\sffamily\itshape To ...}
-\cleardoublepage
-
-%\rmfamily
-\normalfont
-% *************** Abstract **********
-\begin{abstract}
-Make it  short, make it clear.
-\end{abstract}
-
-% *************** Table of contents ***************
+%*******************************************
 \pagenumbering{roman}
 \pagestyle{headings}
+% *************** Dedication ***************
+%\vspace*{\fill}
+%{\hfill\sffamily\itshape To ...}
+%\cleardoublepage
+%
+%%\rmfamily
+%\normalfont
+% *************** Abstract **********
+\clearpage
+\section*{Abstract}
+Make it short, make it clear !
+\blindtext
+\paragraph{Keywords :} Make, Me, Googleable
+%************** Akcnowledgments *******************
+\clearpage
+\section*{Acknowlegements}
+Thanks mum, thanks dad, no really… 
+\blindtext
+
+% *************** Table of contents ***************
+\cleardoublepage
 \setsecnumdepth{section}
 \maxtocdepth{subsection}
 \cftsetindents{subsection}{4.5em}{3.9em}

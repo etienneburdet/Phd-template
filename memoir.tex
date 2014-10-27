@@ -1,3 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Phd Template by Etienne Burdet 
+%	(http://etienneburdet.com)
+%	
+%   This is an alpha version, contribution from anybody are warmly welcomed (contributors will of course be mentionned). Fork on github: https://github.com/etienneburdet/Phd-template
+%
+%  Copyright (c) 2014 Etienne Burdet
+%
+%    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+%    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+%    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%
+%
+%%%%%%%%%%%% Practical Use %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This template is to be compiled with XeLatex or LuaLatex and Bibtex.
+%
+% Microtype package capabilities will vary depending on the compiliation method (lualatex or Xelatex).
+%
+% I strongly recommend to name your chapters rather than numbering them. Numbering can vary with non-numbered chapter such as intro or conclusion. Latex auto-numbers anyways, let him do his job !
+%
+% It is recommanded to use xindy (external software) for the glossaries:
+% - (Install xindy)
+% - Fully Compile (e.g. XeLaTeX -> XeLaTeX)
+% - In a terminal in your current working directory type : "xindy memoir.tex". This will create the appropriate files.
+% - Recompile, your keys are listed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \documentclass[11pt, a4paper, makeidx]{memoir}
 
 % *** Load packages ***
@@ -5,7 +35,8 @@
 \usepackage{blindtext} % For the purpose  of the template. Erase this  in your doc.
 
 % --- Font & Enconding options ---
-\usepackage[utf8]{luainputenc}
+%\usepackage[utf8]{luainputenc} % for lualatex. XeteX is usually faster.
+%\usepackage{xetex-inputenc}
 \usepackage{lmodern}
 \usepackage{fontspec}
 
@@ -13,11 +44,11 @@
 \renewcommand*\familydefault{\sfdefault}
 
 
-%\usepackage{microtype} %Recommended to activate only for final document
+\usepackage{microtype} %Recommended to activate only for final document
 
 % --- Language options ---
 \usepackage{polyglossia}
-\setdefaultlanguage{french}
+\setdefaultlanguage{english}
 
 
 % --- Graphics and symbols ---
@@ -37,9 +68,6 @@
         citecolor=blue,%
         filecolor=blue,%
         urlcolor=blue,%
-        pdftex,%
-        unicode,
-        bookmarksopen
         ]{hyperref}  
         
 % --- Environments & Commands ---
@@ -88,20 +116,25 @@
 
 % *************** Graphic Files ***************
 \graphicspath{
-{./chap-xx/img/},
+{./img/},
 }
 
 %*************** Glossaries ***************
 \newglossary{symbols}{sym}{sbl}{List of Symbols}
 \makeglossaries
 
+%*************** Partial Compile *************
+% \includeonly{chapter-a}
+
 %*********************
 \begin{document}
+
+
 
 % *** Front matter ***
 
 \frontmatter
-\include{front.tex}
+\include{front}
 
 % *** Main matter ***
 \mainmatter
@@ -111,10 +144,10 @@
 \pagestyle{companion}
 
 \epipart{A part with an epigraph}{"A fancy quote"}{Some pretentious author}
-\include{chapter-a/chapter-a} % You may include multiple files per chapter.
+\include{chapter-a} % You may include multiple files per chapter.
 
-\part*{A regular part without epigraph(unnumbered)}
-\include{chapter-b/chapter-b} 
+\part*{A regular part without epigraph (unnumbered)}
+\include{chapter-b} 
 
 %% *************** Bibliography ***************
 \bibliographystyle{chicagoa}
@@ -123,10 +156,10 @@
 % **************** Appendixes *************
 \appendix
 \appendixpage*
-\include{app1/app1.tex}
+\include{app1}
 
 % *************** Back matter ***************
 \backmatter
-\input{back.tex}
+\include{back}
 
 \end{document}

@@ -63,7 +63,8 @@ TSWLatexianTemp*
 *.ilg
 *.ind
 *.ist
-
+*.glsdefs
+*.sbl
 # minitoc
 *.maf
 *.mtc
