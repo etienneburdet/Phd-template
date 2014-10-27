@@ -1,11 +1,20 @@
 Phd-template
 ============
 
-My phd thesis template. Still super alpha, but functional. 
-Requires lualatex.
+My phd thesis template, based on the memoir class.
 
-### Pull request ?
-Please  do !
+- memoir.tex is for a full compile of the document.
+- SingleCompile.tex is for a proof reading version of a single chapter.
+
+Other things can be figured out easily. Requires Xetex/lualatex.
+
+
+### Participation
+Feel free to fork and pull request, I'll be to integrate your enhancements (and credit you of course !)
+
+### To do
+memoir.tex is more or less done.  
+SingleCompile.tex could use some more work, espacially to deal with the \gls commands.
 
 ### Licence
 

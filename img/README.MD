@@ -1,0 +1,1 @@
+Put your images here. They can be arranged in folders, e.g. one subfolders per chapter.
