@@ -10,11 +10,12 @@ Other things can be figured out easily. Requires Xetex/lualatex.
 
 
 ### Participation
-Feel free to fork and pull request, I'll be to integrate your enhancements (and credit you of course !)
+Feel free to fork and pull request, I'll be happy to integrate your enhancements (and credit you of course !)
 
 ### To do
-memoir.tex is more or less done.  
-SingleCompile.tex could use some more work, espacially to deal with the \gls commands.
+- memoir.tex : the part decoration command is still messy, it could be much cleaner.
+- SingleCompile.tex : deal with \gls commands, workaround for section with multiple titles (\section[toc][header]{full title})
+- Writing some very (very) short documentation/workflow.
 
 ### Licence
 
